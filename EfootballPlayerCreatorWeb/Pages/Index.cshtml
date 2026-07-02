@@ -1,0 +1,205 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2 id="overall"></h2>
+
+<div>
+    <label for="name">Player name</label>
+    <input id="name" type="text" value="" />
+</div>
+
+<div>
+    <label for="weakFootAccuracy">Weak foot accuracy</label>
+
+    <select id="weakFootAccuracy">
+        <option value="Low">Low</option>
+        <option selected value="Medium">Medium</option>
+        <option value="High">High</option>
+        <option value="VeryHigh">Very High</option>
+    </select>
+</div>
+
+<div>
+    <label for="position">Position</label>
+
+    <select id="position">
+        <option value="GK">GK</option>
+        <option value="CB">CB</option>
+        <option value="LB">LB</option>
+        <option value="RB">RB</option>
+        <option value="DMF">DMF</option>
+        <option selected value="CMF">CMF</option>
+        <option value="LMF">LMF</option>
+        <option value="RMF">RMF</option>
+        <option value="AMF">AMF</option>
+        <option value="LWF">LWF</option>
+        <option value="RWF">RWF</option>
+        <option value="SS">SS</option>
+        <option value="CF">CF</option>
+    </select>
+</div>
+
+<div class="stat">
+    <label>Height</label>
+    <input class="stat-slider" data-stat="height" type="range" min="150" max="210" value="175">
+    <span class="stat-value">175</span>
+</div>
+
+<div class="stat">
+    <label>Offensive Awareness</label>
+    <input class="stat-slider" data-stat="offensiveAwareness" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Ball Control</label>
+    <input class="stat-slider" data-stat="ballControl" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Dribbling</label>
+    <input class="stat-slider" data-stat="dribbling" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Tight Possession</label>
+    <input class="stat-slider" data-stat="tightPossession" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Low Pass</label>
+    <input class="stat-slider" data-stat="lowPass" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Lofted Pass</label>
+    <input class="stat-slider" data-stat="loftedPass" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Finishing</label>
+    <input class="stat-slider" data-stat="finishing" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Header</label>
+    <input class="stat-slider" data-stat="header" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Place Kicking</label>
+    <input class="stat-slider" data-stat="placeKicking" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Curl</label>
+    <input class="stat-slider" data-stat="curl" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Speed</label>
+    <input class="stat-slider" data-stat="speed" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Acceleration</label>
+    <input class="stat-slider" data-stat="acceleration" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Kicking Power</label>
+    <input class="stat-slider" data-stat="kickingPower" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Jump</label>
+    <input class="stat-slider" data-stat="jump" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Physical Contact</label>
+    <input class="stat-slider" data-stat="physicalContact" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Balance</label>
+    <input class="stat-slider" data-stat="balance" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Stamina</label>
+    <input class="stat-slider" data-stat="stamina" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Defensive Awareness</label>
+    <input class="stat-slider" data-stat="defensiveAwareness" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Defensive Engagement</label>
+    <input class="stat-slider" data-stat="defensiveEngagement" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Tackling</label>
+    <input class="stat-slider" data-stat="tackling" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>Aggression</label>
+    <input class="stat-slider" data-stat="aggression" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>GK Awareness</label>
+    <input class="stat-slider" data-stat="gkAwareness" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>GK Catching</label>
+    <input class="stat-slider" data-stat="gkCatching" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>GK Parrying</label>
+    <input class="stat-slider" data-stat="gkParrying" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>GK Reflexes</label>
+    <input class="stat-slider" data-stat="gkReflexes" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
+
+<div class="stat">
+    <label>GK Reach</label>
+    <input class="stat-slider" data-stat="gkReach" type="range" min="40" max="99" value="40">
+    <span class="stat-value">40</span>
+</div>
