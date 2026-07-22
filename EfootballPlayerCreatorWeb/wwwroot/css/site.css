@@ -1,31 +1,195 @@
-html {
-  font-size: 14px;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --low-stat: #FF0000;
+    --normal-stat: #FFC700;
+    --high-stat: #5CFF00;
+    --very-high-stat: #00FFD2;
+
+    --black: #13151D;
+    --light-black: #171922;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@font-face {
+    font-family: "EfootballStencilRegular";
+    src: url("../assets/fonts/eFootballStencil-Regular.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+@font-face {
+    font-family: "EfootballSansRegular";
+    src: url("../assets/fonts/eFootballSans-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+@font-face {
+    font-family: "EfootballSansBold";
+    src: url("../assets/fonts/eFootballSans-Bold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: "Manrope", sans-serif;
+    background-color: var(--black);
+    color: #fcfcfc;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+button,
+input,
+select {
+    font-family: EfootballSansBold;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.container {
+    margin-inline: auto;
+    padding-inline: 15vw;
+    padding-top: 3vh;
+}
+
+.overall {
+    font-family: "EfootballStencilRegular", sans-serif;
+}
+
+.stat-value, label {
+    font-family: "EfootballSansRegular", sans-serif;
+}
+
+.stat-value {
+    text-align: center;
+}
+
+.card-container {
+    width: 13rem;
+    aspect-ratio: 5/7;
+    transition: transform 0.1s ease-in-out;
+}
+
+.card-container:hover {
+    cursor: pointer;
+    transform: scale(1.01)
+}
+
+.card-blank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    border: 2px solid #fcfcfc;
+}
+
+.card-blank-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-image-upload-svg {
+    width: 1rem;
+    opacity: 0.7;
+}
+
+.general-settings,
+.attacking-column,
+.athleticism-column,
+.defending-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.general-settings,
+.stat-settings{
+    background-color: var(--light-black);
+    padding: 1rem;
+    border-radius: 16px;
+}
+
+.stat-settings {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat-column-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.stat-value-container {
+    display: flex;
+    user-select: none;
+    gap: 0.5rem;
+}
+
+.stat-edit-btn {
+    appearance: none;
+    padding: 0.4rem;
+    line-height: 1;
+    border-radius: 8px;
+    background-color: var(--light-black);
+    border: 2px solid transparent;
+}
+
+.stat-minus-btn,
+.stat-plus-btn {
+    transition: border 0.2s ease
+}
+
+.stat-minus-btn:hover {
+    border: 2px solid rgba(255, 0, 0, 0.5)
+}
+
+.stat-plus-btn:hover {
+    border: 2px solid rgba(0, 255, 0, 0.5);
+}
+
+.stat-minus-btn {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+.stat-plus-btn {
+    color: rgba(0, 255, 0, 0.5);
+}
+
+.stat-editor {
+    width: 2.5ch;
+}
+
+.stat-value,
+.stat-input {
+    width: 100%;
+}
+
+.stat-input {
+    display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }

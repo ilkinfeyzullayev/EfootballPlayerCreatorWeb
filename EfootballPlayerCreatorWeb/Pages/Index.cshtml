@@ -1,205 +1,394 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "eFootball Card Creator";
 }
 
-<h2 id="overall"></h2>
+<div class="container">
+    @* Card Container *@
+    <div class="card-container card-blank">
+        <div class="card-blank-message">
+            <p style="opacity: 0.7">Upload your card design</p>
+            <svg class="card-image-upload-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#fcfcfc" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#fcfcfc" stroke-width="1.5" stroke-linecap="round"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
 
-<div>
-    <label for="name">Player name</label>
-    <input id="name" type="text" value="" />
+    <h2 id="overall" class="overall"></h2>
+
+    <div class="stat-column-container">
+        <div class="general-settings">
+            <div>
+                <label for="name">Player name</label>
+                <input id="name" type="text" value="" />
+            </div>
+
+            <div>
+                <label for="weakFootAccuracy">Weak foot accuracy</label>
+                <select id="weakFootAccuracy">
+                    <option value="Low">Low</option>
+                    <option selected value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="VeryHigh">Very High</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="position">Position</label>
+                <select id="position">
+                    <option value="GK">GK</option>
+                    <option value="CB">CB</option>
+                    <option value="LB">LB</option>
+                    <option value="RB">RB</option>
+                    <option value="DMF">DMF</option>
+                    <option selected value="CMF">CMF</option>
+                    <option value="LMF">LMF</option>
+                    <option value="RMF">RMF</option>
+                    <option value="AMF">AMF</option>
+                    <option value="LWF">LWF</option>
+                    <option value="RWF">RWF</option>
+                    <option value="SS">SS</option>
+                    <option value="CF">CF</option>
+                </select>
+            </div>
+
+            <div class="stat" data-stat="height">
+                <label>Height</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value height">175</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-settings">
+        <div class="attacking-column">
+            <div class="stat" data-stat="offensiveAwareness">
+                <label>Offensive Awareness</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="ballControl">
+                <label>Ball Control</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="dribbling">
+                <label>Dribbling</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="tightPossession">
+                <label>Tight Possession</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="lowPass">
+                <label>Low Pass</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="loftedPass">
+                <label>Lofted Pass</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="finishing">
+                <label>Finishing</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="header">
+                <label>Header</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="placeKicking">
+                <label>Place Kicking</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="curl">
+                <label>Curl</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="athleticism-column">
+            <div class="stat" data-stat="speed">
+                <label>Speed</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="acceleration">
+                <label>Acceleration</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="kickingPower">
+                <label>Kicking Power</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="jump">
+                <label>Jump</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="physicalContact">
+                <label>Physical Contact</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="balance">
+                <label>Balance</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="stamina">
+                <label>Stamina</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="defending-column">
+            <div class="stat" data-stat="defensiveAwareness">
+                <label>Defensive Awareness</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="defensiveEngagement">
+                <label>Defensive Engagement</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="tackling">
+                <label>Tackling</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="aggression">
+                <label>Aggression</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="gkAwareness">
+                <label>GK Awareness</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="gkCatching">
+                <label>GK Catching</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="gkParrying">
+                <label>GK Parrying</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="gkReflexes">
+                <label>GK Reflexes</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+
+            <div class="stat" data-stat="gkReach">
+                <label>GK Reach</label>
+                <div class="stat-value-container">
+                    <button class="stat-minus-btn stat-edit-btn">-</button>
+                    <div class="stat-editor">
+                        <input class="stat-input" type="number">
+                        <span class="stat-value">40</span>
+                    </div>
+                    <button class="stat-plus-btn stat-edit-btn">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div>
-    <label for="weakFootAccuracy">Weak foot accuracy</label>
-
-    <select id="weakFootAccuracy">
-        <option value="Low">Low</option>
-        <option selected value="Medium">Medium</option>
-        <option value="High">High</option>
-        <option value="VeryHigh">Very High</option>
-    </select>
-</div>
-
-<div>
-    <label for="position">Position</label>
-
-    <select id="position">
-        <option value="GK">GK</option>
-        <option value="CB">CB</option>
-        <option value="LB">LB</option>
-        <option value="RB">RB</option>
-        <option value="DMF">DMF</option>
-        <option selected value="CMF">CMF</option>
-        <option value="LMF">LMF</option>
-        <option value="RMF">RMF</option>
-        <option value="AMF">AMF</option>
-        <option value="LWF">LWF</option>
-        <option value="RWF">RWF</option>
-        <option value="SS">SS</option>
-        <option value="CF">CF</option>
-    </select>
-</div>
-
-<div class="stat">
-    <label>Height</label>
-    <input class="stat-slider" data-stat="height" type="range" min="150" max="210" value="175">
-    <span class="stat-value">175</span>
-</div>
-
-<div class="stat">
-    <label>Offensive Awareness</label>
-    <input class="stat-slider" data-stat="offensiveAwareness" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Ball Control</label>
-    <input class="stat-slider" data-stat="ballControl" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Dribbling</label>
-    <input class="stat-slider" data-stat="dribbling" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Tight Possession</label>
-    <input class="stat-slider" data-stat="tightPossession" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Low Pass</label>
-    <input class="stat-slider" data-stat="lowPass" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Lofted Pass</label>
-    <input class="stat-slider" data-stat="loftedPass" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Finishing</label>
-    <input class="stat-slider" data-stat="finishing" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Header</label>
-    <input class="stat-slider" data-stat="header" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Place Kicking</label>
-    <input class="stat-slider" data-stat="placeKicking" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Curl</label>
-    <input class="stat-slider" data-stat="curl" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Speed</label>
-    <input class="stat-slider" data-stat="speed" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Acceleration</label>
-    <input class="stat-slider" data-stat="acceleration" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Kicking Power</label>
-    <input class="stat-slider" data-stat="kickingPower" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Jump</label>
-    <input class="stat-slider" data-stat="jump" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Physical Contact</label>
-    <input class="stat-slider" data-stat="physicalContact" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Balance</label>
-    <input class="stat-slider" data-stat="balance" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Stamina</label>
-    <input class="stat-slider" data-stat="stamina" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Defensive Awareness</label>
-    <input class="stat-slider" data-stat="defensiveAwareness" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Defensive Engagement</label>
-    <input class="stat-slider" data-stat="defensiveEngagement" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Tackling</label>
-    <input class="stat-slider" data-stat="tackling" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>Aggression</label>
-    <input class="stat-slider" data-stat="aggression" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>GK Awareness</label>
-    <input class="stat-slider" data-stat="gkAwareness" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>GK Catching</label>
-    <input class="stat-slider" data-stat="gkCatching" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>GK Parrying</label>
-    <input class="stat-slider" data-stat="gkParrying" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>GK Reflexes</label>
-    <input class="stat-slider" data-stat="gkReflexes" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
-
-<div class="stat">
-    <label>GK Reach</label>
-    <input class="stat-slider" data-stat="gkReach" type="range" min="40" max="99" value="40">
-    <span class="stat-value">40</span>
-</div>
+        </div>
