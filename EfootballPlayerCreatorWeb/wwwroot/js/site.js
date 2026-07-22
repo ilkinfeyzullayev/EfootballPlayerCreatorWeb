@@ -67,7 +67,7 @@ async function calculateOverall() {
 
     const result = await response.json();
 
-    document.getElementById("overall").textContent = result.overall;
+    document.getElementById("overall").textContent = result.exactOverall;
 }
 
 // ===== GENERAL INPUTS =====
@@ -156,6 +156,32 @@ document.querySelectorAll(".stat-value").forEach(statValue => {
 
 document.querySelectorAll(".stat-input").forEach(statInput => {
 
+    const statInputs = [...document.querySelectorAll(".stat-input")];
+
+    statInput.addEventListener("keydown", (e) => {
+        if (e.key === "Tab") {
+            e.preventDefault();
+
+            const index = statInputs.indexOf(e.target);
+
+            if (index < statInputs.length - 1) {
+                e.target.nextElementSibling.style.display = "block"
+                e.target.style.display = "none"
+
+                statInputs[index + 1].style.display = "block"
+                statInputs[index + 1].focus();
+                statInputs[index + 1].nextElementSibling.style.display = "none"
+            } else {
+                e.target.nextElementSibling.style.display = "block"
+                e.target.style.display = "none"
+
+                statInputs[0].style.display = "block"
+                statInputs[0].focus();
+                statInputs[0].nextElementSibling.style.display = "none"
+            }
+        }
+    });
+
     statInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.target.blur();
@@ -165,7 +191,12 @@ document.querySelectorAll(".stat-input").forEach(statInput => {
     statInput.addEventListener("blur", (e) => {
 
         const stat = e.target.nextElementSibling
-        stat.innerText = clamp(Number(e.target.value), 40, 99)
+
+        if (!stat.classList.contains("height")) {
+            stat.innerText = clamp(Number(e.target.value), 40, 99)
+        } else {
+            stat.innerText = clamp(Number(e.target.value), 150, 210)
+        }
 
         renderStatColors()
         calculateOverall()

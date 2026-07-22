@@ -20,7 +20,8 @@ namespace EfootballPlayerCreatorWeb.Pages
 
             return new JsonResult(new
             {
-                player.Overall
+                player.Overall,
+                player.ExactOverall
             });
         }
     }
